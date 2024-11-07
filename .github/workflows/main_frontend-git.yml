@@ -12,7 +12,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: production
+    env:
+      VITE_API_URI: ${{ secrets.API_URI }}
+      
     steps:
       - uses: actions/checkout@v4
 
