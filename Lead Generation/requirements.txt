@@ -1,0 +1,8 @@
+beautifulsoup4
+python
+python-dotenv
+pyautogen
+requests
+langchain
+langchain-community
+tavily-python

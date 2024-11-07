@@ -1,0 +1,1 @@
+export { SocialMediaAuthButton } from "./social-media-auth-button";

@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+@keyframes popup {
+  0% {
+    width: 0;
+    height: 0;
+    bottom: 50vh;
+    right: 50vh;
+  }
+
+  50% {
+    width: 100vw;
+    height: 100vh;
+    bottom: 50vh;
+    right: 50vh;
+  }
+
+  100% {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+pre {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}

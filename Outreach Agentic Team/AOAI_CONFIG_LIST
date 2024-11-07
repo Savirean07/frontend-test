@@ -1,0 +1,9 @@
+[
+    {
+        "model": "autogen_studio_deployment",
+        "api_key": ".................",
+        "azure_endpoint":"https://{............}.openai.azure.com/",
+        "api_version": "2024-02-01",
+        "api_type": "azure"
+    }
+]           

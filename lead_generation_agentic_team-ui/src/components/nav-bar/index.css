@@ -1,0 +1,12 @@
+.scroll-up {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 0 auto;
+  outline: 1px solid blue;
+
+  &::child {
+    color: black !important;
+  }
+}

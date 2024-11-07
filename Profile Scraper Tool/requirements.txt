@@ -1,0 +1,6 @@
+http.client
+requests
+python-dotenv
+apify-client
+langchain
+langchain-community

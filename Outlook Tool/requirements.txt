@@ -1,0 +1,24 @@
+# Office 365 and Microsoft Graph API integration
+O365==2.0.16
+
+# Langchain tools for Office 365
+langchain-core==0.0.171
+langchain-community==0.0.10
+
+# Autogen for generating language model agents and dynamic functions
+autogen==0.2.3
+
+# Pydantic for data validation and management
+pydantic==2.0.3
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# General utilities
+requests==2.31.0
+
+# Required for Azure OpenAI integration
+azure-openai==0.1.0
+
+# Ensure compatibility with modern Python features
+typing-extensions==4.7.0

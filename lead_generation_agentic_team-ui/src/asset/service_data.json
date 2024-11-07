@@ -1,0 +1,73 @@
+{
+  "routes": [
+    {
+      "id": "1",
+      "name": "Home",
+      "path": ""
+    },
+    {
+      "id": "2",
+      "name": "About Us",
+      "path": "about"
+    },
+    {
+      "id": "3",
+      "name": "Blog",
+      "path": "blog",
+      "subPath": [
+        {
+          "id": "1",
+          "name": "Blogging-Teams",
+          "path": "blog/AI-blog"
+        },
+        {
+          "id": "2",
+          "name": "Marketing-Teams",
+          "path": "blog/AI-marketing"
+        },
+        {
+          "id": "3",
+          "name": "Research-Teams",
+          "path": "blog/AI-chatbot"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Roles",
+      "path": "service",
+      "subPath": [
+        {
+          "id": "1",
+          "name": "AI-Blog",
+          "path": "service/bot/AI-blog",
+          "icon": "🤖"
+        },
+        {
+          "id": "2",
+          "name": "AI-Marketing",
+          "path": "service/AI-marketing",
+          "icon": "🤖"
+        },
+        {
+          "id": "3",
+          "name": "AI-Chatbot",
+          "path": "service/AI-chatbot",
+          "icon": "🤖"
+        },
+        {
+          "id": "4",
+          "name": "AI-Consulting",
+          "path": "service/AI-consulting",
+          "icon": "🤖"
+        }
+      ]
+    },
+    { "id": "5", "name": "Plans", "path": "subscription-plan" },
+    {
+      "id": "6",
+      "name": "Contact Us",
+      "path": "contact"
+    }
+  ]
+}
