@@ -9,30 +9,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # Checkout the latest commit in the main branch
       - uses: actions/checkout@v4
-
-      # Set up Node.js version 20.x
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
-      # Install dependencies and build the Vite React app
       - name: Install dependencies and build
         working-directory: ./lead_generation_agentic_team-ui
         run: |
           npm install
           npm run build
-
-      # Zip the build directory for deployment
       - name: Zip artifact for deployment
-        run: |
-          zip -r release.zip ./lead_generation_agentic_team-ui/dist/*
-
-      # Upload the zip artifact for use in the deployment job
+        run: zip -r release.zip ./lead_generation_agentic_team-ui/dist/*
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -46,33 +35,25 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write
+      id-token: write  # Needed for OIDC authentication
 
     steps:
-      # Download the artifact from the build job
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: node-app
-
-      # Unzip the artifact for deployment
       - name: Unzip artifact for deployment
         run: unzip release.zip -d .
-
-      
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }} 
-
-      # Deploy to Azure Web App
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'leadgenwingman'  # Your Azure Web App name
-          slot-name: 'Production'     # Use 'default' if no slot is configured
+          app-name: 'leadgenwingman'
+          slot-name: 'Production'
           package: './lead_generation_agentic_team-ui/dist/'
