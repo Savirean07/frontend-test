@@ -47,7 +47,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}  # Use only if Service Principal is needed, or remove if using OIDC
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       - name: 'Deploy to Azure Web App'
@@ -55,5 +55,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'leadgenwingman'
-          slot-name: 'Production'
+          slot-name: 'Production'  # Update if not using a deployment slot
           package: './lead_generation_agentic_team-ui/dist/'
