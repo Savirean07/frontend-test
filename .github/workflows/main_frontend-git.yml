@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      VITE_API_URI: "https://azure.whiteblob.site/dev"
+      VITE_API_URI: "https://leadgen-wingman-backend.azurewebsites.net"
       
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +29,6 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-
       - name: Zip artifact for deployment
         run: zip release.zip ./lead_generation_agentic_team-ui/dist/ -r
 
@@ -54,9 +53,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-        
       
-          
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
