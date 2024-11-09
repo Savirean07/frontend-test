@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      VITE_API_URI: "https://leadgen-wingman-backend.azurewebsites.net"
+      VITE_API_URI: "https://leadgen-wingman-backend.azurewebsites.net/user"
       
     steps:
       - uses: actions/checkout@v4
